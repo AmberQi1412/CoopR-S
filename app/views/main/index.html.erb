@@ -1,0 +1,51 @@
+<html lang="en">
+    
+    <head>
+        
+    </head>
+    
+    <body>
+        
+        <input type="checkbox" id="side-bar-toggler" name="" value="">
+        
+        <div class ="page-wrap">
+            
+            <label for="side-bar-toggler" class="toggle">☰</label>
+        
+        <div class ="page-content"></div>
+        
+        <div class = "side-bar">
+            <ul>
+                <div class="list-entries">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Jobs</li>
+                    <li>
+                        <a href="/users/sign_up">Register</a>
+                    </li>
+                    <% if user_signed_in? %>
+                        <li>
+                            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+                        </li>
+                    <% else %>
+                        <li>
+                        <%= link_to('Login', new_user_session_path)  %>  
+                        </li>
+                    <% end %>
+                </div>
+            </ul>
+        </div>
+    </div>
+    
+ 
+        
+
+        
+        
+        
+        
+        
+
+    </body>
+</html>

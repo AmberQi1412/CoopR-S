@@ -1,0 +1,67 @@
+@import "bourbon";                                                                                     
+
+ul{
+    list-style-type: none;
+}
+////////////////////// Navigation Bar /////////////////////////////
+.page-content{
+    @include transition();
+    @include transform(scale(1));
+    @include transform-origin(right center);
+    position:relative;
+    // z-index: 1;
+    // height: 100%;
+    // overflow: scroll;
+}
+
+.toggle{
+    @include position(fixed, 20px 0 0 20px);
+    @include transition();
+    text-decoration: none;
+    z-index: 2;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+}
+
+.side-bar{
+    @include position(fixed, 0px 0 0px -190px);
+    width: 120px;
+    padding: 30px;
+    background: #333;
+    @include transition();
+    z-index: 0;
+    
+    li {
+        color: rgba(255, 255, 255, 0.8);
+        -webkit-font-smoothing: antialiased;
+        font-family: "Ubuntu", sans-serif ;
+        font-size: 16px;
+        margin-bottom: 16px;
+        cursor: pointer;
+        
+        &:hover{
+            color: rgba(255,255,255,1);
+        }
+    }
+}
+
+#side-bar-toggler{
+    display: none;
+    
+    &:checked + .page-wrap{
+        .side-bar{
+            left: 0px;
+        }
+        .toggle{
+            left: 200px;
+        }
+        .page-content{
+            // @include transform(scale(0.7));
+            // box-shadow: 0px 4px 20px rbga(0,0,0,0.2);
+        }
+    }   
+}
+
+////////////////////// Full Screen Video Background /////////////////////////////
+
